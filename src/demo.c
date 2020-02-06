@@ -185,7 +185,6 @@ void demo(char *cfgfile, char *weightfile, float thresh, float hier_thresh, int 
     {
         int src_fps = 25;
         src_fps = get_stream_fps_cpp_cv(cap);
-        printf(src_fps);
         output_video_writer =
             create_video_writer(out_filename, 'D', 'I', 'V', 'X', src_fps, get_width_mat(det_img), get_height_mat(det_img), 1);
 
@@ -227,7 +226,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, float hier_thresh, int 
             draw_detections_cv_v3(show_img, local_dets, local_nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes, demo_ext_output);
             free_detections(local_dets, local_nboxes);
 
-            printf("\nFPS:%.1f\n", fps);
+            printf("\nFPS:%.1f\n");
 
             if(!prefix){
                 if (!dont_show) {
