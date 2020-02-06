@@ -859,8 +859,7 @@ void draw_detections_cv_v3(mat_cv* mat, detection *dets, int num, float thresh, 
         if (!show_img) return;
         static int frame_id = 0;
         frame_id++;
-        ofstream myfile
-        myfile.open('preds.txt');
+      
 
         for (i = 0; i < num; ++i) {
             char labelstr[4096] = { 0 };
@@ -880,7 +879,7 @@ void draw_detections_cv_v3(mat_cv* mat, detection *dets, int num, float thresh, 
                         strcat(labelstr, names[j]);
                     }
                     printf("%d %d %s: %.0f%% ", frame_id, i, names[j], dets[i].prob[j] * 100);
-                    myfile << ("%d %s: %.0f%% \n", frame_id, names[j], dets[i].prob[j] * 100)
+           
                 }
                 
             }
@@ -985,7 +984,7 @@ void draw_detections_cv_v3(mat_cv* mat, detection *dets, int num, float thresh, 
             fflush(stdout);
         }
     }
-    myfile.close():
+    
     catch (...) {
         cerr << "OpenCV exception: draw_detections_cv_v3() \n";
     }
